@@ -1,0 +1,78 @@
+{% extends 'change_nav.html' %}
+{% load static %}
+{% block title%}Quickart | {{category.name}}{% endblock%}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="container mt-5 pt-5">
+    <h2 class="mb-2 text-danger text-center">Our Products</h2>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-100 shadow-sm mt-3">
+              <a href="{% url 'product_view' product.id %}">
+                <img src="{{product.image.url}}" class="card-img-top " alt="{{ product.name }}" style="border: 1px solid red; height:300px; object-fit: cover;">
+              </a>
+                <div class="card-body">
+                    <a href="{% url "product_view" product.id %}">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                    </a>
+                    <p class="card-text text-muted">₹{{ product.price }}</p>
+                    <p class="card-text">{{ product.description|truncatechars:100 }}</p>
+                     
+                <div>
+        <div>
+               <!-- Wishlist toggle -->
+              <a href="{% url 'toggle_wishlist' product.id %}" class="btn btn-light btn-sm rounded-circle shadow">
+              {% if product.id in wishlist_ids %}
+                 <i class="fas fa-heart text-danger"></i>
+              {% else %}
+                 <i class="far fa-heart"></i>
+              {% endif %}
+              </a>
+
+                 <!-- Cart toggle -->
+              <a href="{% url 'toggle_cart' product.id %}" class="btn btn-light btn-sm rounded-circle shadow">
+              {% if product.id in cart_ids %}
+              <i class="fas fa-shopping-cart text-success"></i>
+              {% else %}
+              <i class="fas fa-shopping-cart text-muted"></i>
+              {% endif %}
+              </a>
+             </div>
+
+            </div>
+            </div>
+            </div>
+        </div>
+         {% endfor %}
+        </div>
+
+        <!-- Search bar filter -->
+<div class="container mt-5 pt-5">
+        {% if query %}
+        {% if products and products.count > 0 %}
+    <h2 class="mb-2 text-danger text-center">Our Products</h2>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-100 shadow-sm mt-3">
+                <img src="{{product.image.url}}" class="card-img-top " alt="{{ product.name }}" style="border: 1px solid red; height:300px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text text-muted">₹{{ product.price }}</p>
+                    <p class="card-text">{{ product.description|truncatechars:100 }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+        {% else %}
+            <p class="text-danger text-center">No products found for "{{ query }}".</p>
+        {% endif %}
+        {% endif %}
+        </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+
+
+/* nav start hover effect */
+.nav-link:hover {
+  background-color: #d83019;  
+  color: rgb(236, 228, 228);
+  border-radius: 4px;
+}
+.nav-link.active {
+  background-color: #d83019;
+  color: white !important;
+  border-radius: 5px;
+}
+.nav-link:active {
+  background-color: #d83019;
+  transform: scale(0.98);
+}
+/* nav end hover effect */
+/* Homepage start */
+#home-img{
+   position:relative;
+   opacity:0.5;
+   width:100%;
+   max-height:500px;
+}
+#home-text{
+    position:absolute;
+    top:30%;
+    left:4%;
+}
+/* Homepage end */
+
+/* Button start */
+#btn{
+    border:1px solid red;
+    border-radius:10px;
+}
+#btn-sign:hover{
+    background-color: red;
+    color:white;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #fa3a18, 0 0 20px #f33f27;
+
+}
+
+/* Button end */
+
+
+/* Homepage start */
+@media (max-width: 990px) {
+
+  #home-img{
+    position: relative;
+    top:40%;
+    width:100%;
+    height: 700px;
+    left:25%;
+  }
+ #home-text{
+    position: absolute;
+    top:30%;
+ }
+ #btn-sign{
+    padding:5px;
+    width:4.5rem;
+    font-weight: bold;
+    margin-left:0px;
+ }
+
+#sm-btn{
+    width:6.7rem;
+    margin-top: 10px;
+    padding:10px;
+}
+#login-btn{
+    margin:5px;
+    padding:7px;
+    width:70px;
+    
+}
+
+}
+/* Homepage end */

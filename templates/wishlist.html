@@ -1,0 +1,32 @@
+{% extends "change_nav.html" %}
+{% load static %}
+{% block title %}Quickart  {{cart}}{% endblock %}
+{% block content %}
+<div class="container mt-5 pt-5">
+    <h2 class="mb-2 text-danger text-center">My Wishlist</h2>
+    <div class="row">
+        {% if wishlist_items %}
+        {% for item in wishlist_items %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-100 shadow-sm mt-3">
+              <a href="{% url 'product_view' item.product.id %}">
+                <img src="{{item.product.image.url}}" class="card-img-top " alt="{{ item.product.name }}" style="border: 1px solid red; height:300px; object-fit: cover;">
+              </a>
+                <div class="card-body">
+                    <a href="{% url "product_view" item.product.id %}">
+                        <h5 class="card-title">{{ item.product.name }}</h5>
+                    </a>
+                    <p class="card-text text-muted">₹{{ item.product.price }}</p>
+                    <p class="card-text">{{ item.product.description|truncatechars:100 }}</p>
+                     
+                  <div>
+            </div>
+            </div>
+  </div>
+</div>
+         {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-danger fw-md text-center p-4">No items in your wishlist.</p>
+       {% endif %}
+{% endblock %}
