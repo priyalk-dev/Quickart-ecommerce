@@ -3,8 +3,8 @@
 {% block title%} Quickkart{%endblock%}
 {% block content%}
           
-          <div class="container mt-5" id="home">
-        <img src="{% static "images/homepage.jpg" %} " id="home-img" >
+    <div class="container mt-5" id="home">
+        <img src="{% static "images/homepage.jpg" %}" id="home-img" >
         <div class="text-center " id="home-text">
             {% if user.is_authenticated %}
             <h1>Welcome, {{ user.username }}! </h1>
@@ -13,14 +13,11 @@
             {% endif %}
             <!-- SEARCH BAR -->
             <form class="d-flex justify-content-center mt-4" method="GET" action="{% url 'products_list' %}" role="search">
-                <input class="form-control me-2 w-60" name="q" type="search" placeholder="Search..." aria-label="Search">
+                <input class="form-control me-2 w-50" name="q" type="search" placeholder="Search..." aria-label="Search">
                 <button class="btn btn-danger" type="submit">Search</button>
             </form>
-         
-        
-          
-       </div>
-    </div> 
+        </div>
+    </div>
 {% endblock%}
      
 
