@@ -58,25 +58,26 @@ Django-Quickkart-Project
 ## ScreenShots
 
 #Home-Page 
-<img src="#" alt="Homepage" width="600">
+<img src="screenshots/home-page.PNG" alt="Homepage" width="600">
 
-#About-Page
-<img src="#" alt="Homepage" width="600">
 
-#Services
-   | - Birthday
-   | - Reunion
-   | - Baby shower
+#Categories
+   | - Electronics
+   | - Home&Kitchen
+   | - Fashion
 
-<img src="#" alt="Homepage" width="600">
-<img src="#" alt="Homepage" width="600">
-<img src="#" alt="Homepage" width="600">
+<img src="screenshots/electronic-page.PNG" alt="electronic page" width="600">
+<img src="screenshots/home-kitchen-page.PNG" alt="Home & Kitchen Page" width="600">
+<img src="screenshots/fashion-page.PNG" alt="Fashion Page" width="600">
 
-#Contact
-     | - #thank you page
+#Login
  
-<img src="#" alt="Contact page" width="600">
+<img src="screenshots/login-page.PNG" alt="Login page" width="600">
 
-      # Thank You Page
-<img src="#" alt="Thank you page" width="600">
+#Sign Up
+<img src="screenshots/signup-page.PNG" alt="Sign Up Page" width="600">
+
+#After Create Account and Login
+<img src="screenshots/after-login-page.PNG" alt="After login Page" width="600">
+
 
