@@ -8,17 +8,6 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-
-# def products_home(request):
-#     products = Products.objects.all()
-#     return render(request, {'products': products})
-
-# def category_products(request, slug):
-#     category = get_object_or_404(Category, slug=slug)
-#     products = Products.objects.filter(category=category)
-#     return render(request, 'category_products.html', {'category': category, 'products': products})
-
-
 def product_view(request,id):
     product = get_object_or_404(Products,id=id)
     return render(request,'product_detail.html',{'product':product})

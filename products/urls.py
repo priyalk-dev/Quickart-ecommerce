@@ -5,7 +5,6 @@ from . import views
 from .models import Wishlist
 
 urlpatterns = [
-    # path('products/',views.products_home,name="products_home"),
     path('category/<slug:slug>/', views.category_products, name='category_products'),
     path('product/<int:id>',views.product_view,name='product_view'),
     path('wishlist/',views.wishlist_view,name='wishlist'),
