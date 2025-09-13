@@ -46,6 +46,7 @@ def user_login(request):
                 )
                 return response
             return render(request, 'auth/login.html', {'form': form})
+        return render(request, 'auth/login.html', {'form': form})
     else:
         form = CustomLoginForm()
         return render(request,'auth/login.html',{'form':form})
